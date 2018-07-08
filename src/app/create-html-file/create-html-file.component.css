@@ -1,0 +1,14 @@
+.preview-html {
+  background-color: #fafafa;
+  border: solid #ccc 1px;
+  border-radius: 5px;
+  margin: 0px;
+  padding: 10px;
+  /* height: 350px; */
+  max-height: 350px;
+  overflow-y: auto;
+  white-space: normal;
+}
+.textarea-custom {
+  max-height: 350px;
+}

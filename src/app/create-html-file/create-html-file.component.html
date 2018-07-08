@@ -1,0 +1,52 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="form-group">
+        <label for="html_text">HTML Create</label>
+        <textarea name="html" class="form-control form-control-sm textarea-custom" [(ngModel)]='html' rows="15"></textarea>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6 .panel-preview">
+      <label for="html_text">HTML Preview</label>
+      <div class="preview-html" [innerHTML]="html">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="form-group">
+        <label for="fileName">Nombre Del archivo</label>
+        <input type="text" class="form-control form-control-sm" name="fileName" id="fileName" [(ngModel)]='fileName' aria-describedby="helpId" placeholder="Nombre del Archivo">
+        <small id="helpId" class="form-text text-muted">Agregar la extención ".html"</small>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="form-group">
+        <label for="title">Título</label>
+        <input type="text" class="form-control form-control-sm" name="title" id="title" [(ngModel)]='title' aria-describedby="helpId" placeholder="Título">
+        <!-- <small id="helpId" class="form-text text-muted">Agregar la extención ".html"</small> -->
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="form-group">
+        <label for="fileName">Meta questions</label>
+        <input type="text" class="form-control form-control-sm" name="questions" id="questions" [(ngModel)]='questions' aria-describedby="helpId" placeholder="Meta questions">
+        <small id="helpId" class="form-text text-muted">meta name="questions" content="(El contenido)"</small>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="form-group">
+        <label for="title">Meta sinónimos</label>
+        <input type="text" class="form-control form-control-sm" name="sinonimos" id="sinonimos" [(ngModel)]='sinonimos' aria-describedby="helpId" placeholder="Meta sinónimos">
+        <small id="helpId" class="form-text text-muted">meta name="sinonimos" content="(El contenido)"</small>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <button type="button" class="btn btn-primary" (click)="download()">
+      <fa name="download"></fa> Download</button>
+  </div>
+</div>

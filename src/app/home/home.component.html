@@ -1,0 +1,64 @@
+<form action="">
+  <button type="button" (click)="prueba()" class="btn btn-info"> boton </button>
+</form>
+
+<div class="container">
+  <div *ngIf="album">
+    <p> {{ itemsAlbum }}</p>
+    <button (click)="resetViewAlbum()">Volver</button>
+  </div>
+
+  <div [ngClass]="{'hide': album}" *ngIf="contentArray">
+    <div class="row">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Album ID</th>
+            <th scope="col">ID</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">URL</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of returnedArray">
+            <th scope="row"> {{ item.albumId }}</th>
+            <td>{{ item.id }}</td>
+            <td>{{ item.title }}</td>
+            <td>{{ item.url }}</td>
+            <td>
+              <img src="{{ item.thumbnailUrl }}" alt="..." class="img-thumbnail">
+            </td>
+            <td class="action-icon">
+              <a (click)="editalbum(item)" title="Edit">
+                <fa class="action-edit" name="edit" size="1x"></fa>
+              </a>
+              <a (click)="deletealbum(item)" title="Delete">
+                <fa class="action-delete" name="times" size="1x"></fa>
+              </a>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-12">
+        <input type="text" [(ngModel)]="itemPerPage" (keydown)="changeItemsPerPage($event)">
+        <!-- <p></p>
+            <pager
+              [totalItems]="contentArray.length"
+              [(ngModel)]="currentPage"
+              (pageChanged)="pageChanged($event)"
+              pageBtnClass="btn"
+              [itemsPerPage]="10"
+              class="pull-left">
+            </pager>
+          </div> -->
+        <p>Total Pages: {{ contentArray.length / itemPerPage }} </p>
+        <pagination [maxSize]="3" [itemsPerPage]="itemPerPage" [totalItems]="contentArray.length" [directionLinks]="true" [align]="true"
+          (pageChanged)="pageChanged($event)"></pagination>
+      </div>
+    </div>
+  </div>

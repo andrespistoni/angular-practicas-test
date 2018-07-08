@@ -1,0 +1,19 @@
+.action-icon {
+  font-size: 1.5em;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.action-delete {
+  background-color: transparent;
+  color: #a94442;
+}
+
+.action-edit {
+  background-color: transparent;
+  color: #337ab7;
+}
+
+.hide {
+  display: none!important;
+}
